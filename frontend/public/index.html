@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta
+      name="description"
+      content="Etymology Explorer -  word origins, historical languages, and geographic distributions."
+    />
+    <meta name="keywords" content="etymology, word origins, linguistics, language history, word evolution, philology" />
+    <meta property="og:title" content="Etymology Explorer" />
+    <meta property="og:description" content="Trace the evolution of any English word through time and space" />
+    <meta property="og:type" content="website" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to external resources for better performance -->
+    <link rel="preconnect" href="https://en.wiktionary.org" />
+    <link rel="preconnect" href="https://raw.githubusercontent.com" />
+    
+    <title>Etymology Explorer</title>
+    
+    <style>
+      /* Loading state styles */
+      body {
+        margin: 0;
+        font-family: Georgia, serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading spinner */
+      .loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #1a1a1a;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid #333;
+        border-top-color: #6b8e23;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Remove default input styling for better consistency */
+      input, button {
+        font-family: inherit;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 2rem; text-align: center; background: #1a1a1a; color: #e0e0e0; min-height: 100vh; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <h1 style="color: #6b8e23; margin-bottom: 1rem;">Etymology Explorer</h1>
+        <p>You need to enable JavaScript to run this application.</p>
+        <p style="color: #999; font-size: 0.9rem; margin-top: 1rem;">
+          This app requires JavaScript to trace word etymologies and display interactive maps.
+        </p>
+      </div>
+    </noscript>
+    <div id="root">
+      <!-- Loading state while React loads -->
+      <div class="loading-container">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+  </body>
+</html>
